@@ -1,0 +1,1 @@
+https://medium.com/analytics-vidhya/stock-prediction-using-linear-regression-cd1d8351f536
