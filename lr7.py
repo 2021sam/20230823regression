@@ -1,7 +1,7 @@
 # Linear Regression - Least Squares
 # https://www.cuemath.com/data/least-squares/
 # https://www.geeksforgeeks.org/python-mean-squared-error/
-
+# https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/regression-and-correlation/simple-linear-regression.html
 # https://towardsdatascience.com/linear-regression-by-hand-python-and-r-79994d47f68
 
 # Calculator
@@ -86,5 +86,3 @@ E_squared = [E[i] * E[i] for i in range(n)]
 print(f'E_squared = {E_squared}')
 mse = sum(E_squared)/n
 print(f'mse = {mse}')
-
-

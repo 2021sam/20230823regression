@@ -10,28 +10,25 @@ xbar = sum(X) / len(X)
 ybar = sum(Y) / len(Y)
 print(f'xbar = {xbar}')
 print(f'ybar = {ybar}')
-
 x_error = [x - xbar for x in X]
 y_error = [y - ybar for y in Y]
-# print(y_error)
-
 sigma = 0
 n = len(X)
 
 # Least Squares 1
-# # sigma 1-n (xi - xbar)(yi - ybar)
-# sig = [x_error[i] * y_error[i] for i in range(n) ]
-# print(sig)
-# numerator = sum(sig)
-# print(numerator)
-# x_error_squared = [e*e for e in x_error]
-# beta = numerator / sum(x_error_squared)
-# print(beta)
-# # y_error_squared = [e*e for e in y_error]
-# # print(y_error_squared)
-# # print(sum(y_error_squared))
-# # variance = sum(y_error_squared) / len(Y)
-# # print(variance)
+#       ∑ (xi - xbar)(yi - ybar)
+# b =   ------------------------
+#       ∑(xi - xbar)^2
+
+numerator = [ (X[i] - xbar)*(Y[i] - ybar) for i in range(n) ]
+denominator = [ (X[i] - xbar )**2 for i in range(n) ]
+b = sum(numerator)/sum(denominator)
+print('Least Squares 1:')
+print(f'slope b = {b}')
+a = ybar - b*xbar
+print(f'a = {a}')
+print(f'y = {b}x + {a}')
+
 
 # Least Squares 2
 # https://www.mathsisfun.com/data/least-squares-regression.html
@@ -43,7 +40,7 @@ n = len(X)
 # b = ∑y - m∑x
 #     --------
 #     N
-
+print('\nLeast Squares 2:')
 XY = [ X[i]*Y[i] for i in range(n)  ]
 X_squared = [ X[i]*X[i] for i in range(n) ]
 numerator = n * sum(XY) - (sum(X)*sum(Y))
@@ -52,7 +49,7 @@ m = numerator / denominator
 b = (sum(Y) - m*sum(X)) / n
 print(f'm = {m}')
 print(f'b = {b}')
-
+print(f'y = {m}x + {b}')
 
 
 # Mean Squared Error - MSE
