@@ -35,3 +35,6 @@ x_error_squared = [e*e for e in x_error]
 
 beta = numerator / sum(x_error_squared)
 print(beta)
+
+alpha = ybar - beta * xbar
+print(alpha)
