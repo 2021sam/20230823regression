@@ -1,6 +1,5 @@
+#   Plot with sklearn Linear Regression
 # https://medium.com/analytics-vidhya/stock-prediction-using-linear-regression-cd1d8351f536
-
-
 
 import pandas as pd
 import yfinance as yf
